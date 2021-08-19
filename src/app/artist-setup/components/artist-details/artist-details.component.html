@@ -1,0 +1,89 @@
+<div class="container px-5 mt-4 pb-5">
+  <div class="row">
+    <div class="col-md-12 col-lg-4 pt-3">
+      <div
+        (click)="navigateBack()"
+        class="d-flex align-items-center cursor-pointer mb-3"
+      >
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        <span>Back to results</span>
+      </div>
+      <mat-card class="example-card artist-card d-flex align-items-center mt-2">
+        <img
+          class="avatar"
+          src="{{ artist?.image_url }}"
+          alt="Photo of a Shiba Inu"
+        />
+        <div class="artist-info">
+          <mat-card-title class="card-title"
+            ><span>{{ artist?.name }}</span></mat-card-title
+          >
+          <mat-card-subtitle class="card-subtitle">
+            <a
+              class="facebook-page-url"
+              href="{{ artist?.facebook_page_url }}"
+              (click)="$event.stopPropagation()"
+              target="_blank"
+            >
+              {{ "facebook.com/" + artist?.name }}
+            </a>
+          </mat-card-subtitle>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-lg-4 col-md-12 pt-3"></div>
+    <div class="col-lg-4 col-md-12 pt-3"></div>
+
+    <div class="col-lg-4 col-md-6 col- d-flex align-items-center">
+      <span *ngIf="artistDetails?.data?.length == 0" class="my-3"
+        >No upcoming events</span
+      >
+      <span *ngIf="artistDetails?.data?.length > 0" class="my-3"
+        >{{ artistDetails?.data?.length }} upcoming events</span
+      >
+    </div>
+    <div class="col-lg-4 off-div d-md-none d-lg-block"></div>
+    <div class="col-lg-4 col-md-6">
+      <mat-form-field appearance="outline" class="input-wrapper">
+        <mat-label>Search</mat-label>
+        <input
+          #input
+          (keyup)="applyFilter(input.value)"
+          autocomplete="off"
+          matInput
+        />
+        <mat-icon matSuffix class="serach-icon">search</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div
+      class="col-lg-4 col-md-6 mt-2 mb-3"
+      *ngFor="let item of artistDetails.filteredData"
+    >
+      <mat-card class="eventDetails">
+        <p>Event Details</p>
+        <hr />
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 py-3">
+              <span><b>Country</b></span> <br />
+              <span>{{ item?.venue?.country }}</span>
+            </div>
+            <div class="col-md-6 py-3">
+              <span><b>City</b></span> <br />
+              <span>{{ item?.venue?.city }}</span>
+            </div>
+            <div class="col-md-6 pb-3">
+              <span><b>Venue</b></span> <br />
+              <span>{{ item?.venue?.name }}</span>
+            </div>
+            <div class="col-md-6 pb-3">
+              <span><b>Date</b></span> <br />
+              <span>{{ item?.datetime | date }}</span>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

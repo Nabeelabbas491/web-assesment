@@ -1,0 +1,41 @@
+<div class="container px-5">
+  <div class="row">
+    <div class="col-md-12 pt-3">
+      <mat-form-field appearance="outline" class="input-wrapper">
+        <mat-label>Search an artist</mat-label>
+        <input
+          #input
+          autocomplete="off"
+          matInput
+          (keydown.enter)="fetchArtist(input.value)"
+        />
+        <mat-icon matSuffix class="serach-icon">search</mat-icon>
+      </mat-form-field>
+      <span *ngIf="artists.data.length == 1">
+        {{ artists.data.length + " Result found for " }}
+        <span>
+          <b
+            >"<span class="artist-found">{{ artists.data[0].name }}</span
+            >"</b
+          >
+        </span>
+      </span>
+      <span *ngIf="artists.data.length > 1">
+        {{ artists.data.length + " Results found for " }}
+        <span>
+          <b
+            >"<span class="artist-found">{{ artists.data[0].name }}</span
+            >"</b
+          >
+        </span>
+      </span>
+    </div>
+
+    <div class="col-lg-4 col-md-12 p-3" *ngFor="let item of artists.data">
+      <app-artists [artist]="item"></app-artists>
+    </div>
+    <div class="col-md-4" *ngIf="artists.data.length == 0">
+      {{ noResultFound }}
+    </div>
+  </div>
+</div>

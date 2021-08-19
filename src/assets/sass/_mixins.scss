@@ -1,0 +1,29 @@
+@mixin artist-card {
+  .example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: $image-bg-cover;
+  }
+
+  .mat-card-title {
+    margin-bottom: 0.2rem !important;
+  }
+
+  .card-subtitle {
+    font-size: $card-subtitle;
+  }
+
+  .card-title {
+    font-size: $card-title;
+  }
+
+  .avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 8rem;
+  }
+
+  .artist-info {
+    width: -webkit-fill-available;
+    padding-left: 1rem !important;
+  }
+}

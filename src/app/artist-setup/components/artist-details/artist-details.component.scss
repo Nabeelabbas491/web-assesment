@@ -1,0 +1,32 @@
+img {
+  user-select: none;
+}
+
+.eventDetails {
+  height: 22rem;
+  &:hover {
+    cursor: pointer;
+    background-color: #f6f6f6;
+  }
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white !important;
+  border-radius: 0.6rem !important;
+}
+
+:host ::ng-deep .input-wrapper .mat-form-field-wrapper {
+  padding-bottom: 0rem !important;
+}
+
+@media (max-width: 991px) {
+  .off-div {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .eventDetails {
+    height: unset;
+  }
+}

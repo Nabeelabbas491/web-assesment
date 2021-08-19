@@ -1,27 +1,21 @@
-# WebAssignment
+# Web assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+This is Web assignment Project.
 
-## Development server
+# Architecture
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+*Followed MVVC architecture
+*The file architecture followed in the project is that, there is an artist-setup Folder inside an app-folder.
+*Inside artist-setup, we have service,common-constant file,enum,interface and components folder that contains all the components related to artist-setup.
+*In service I am fetching an artist and the events related to an artist
+*Inside src folder,we have Custom-Theme file for providing any desired theme to the whole app.
+*The asset folder contains variables for css and mixins.
+\*When a user will search an artist and its events, artist and their events will be saved in session storage which will be used later if user again search for that specific artist to
+prevent an extra-api calls
 
-## Code scaffolding
+# Design Choices
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*used Angular material components for attractive cards and theme.
+*I followed the grid view to show cards
+*Used Sass for better,organized code and to prevent repetition of css
+*Design was kept formal using bootstrap row column to optimize code with lesser custom css

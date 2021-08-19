@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/sass/vars";
+@import "./assets/sass/mixins";
+
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  background-color: $bg-body;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.artist-card {
+  cursor: $pointer;
+  @include artist-card();
+  mat-card-subtitle {
+    margin: unset !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: $pointer;
+}
+
+.facebook-page-url {
+  color: $anchor;
+  text-decoration: none;
+  &:hover {
+    color: $artist-name;
+  }
+}
+
+.input-wrapper {
+  width: -webkit-fill-available;
+}
+
+.serach-icon {
+  color: $icon-search;
+}
+
+.artist-found {
+  color: $artist-name;
+  font-size: 1.6rem;
+}
+
+.art-widh {
+  width: -webkit-fill-available;
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 45%;
+  }
+}

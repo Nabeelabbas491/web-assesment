@@ -1,0 +1,27 @@
+<mat-card
+  (click)="getEventsDetails()"
+  class="example-card artist-card d-flex align-items-center"
+>
+  <img
+    class="avatar"
+    src="{{ artist?.image_url }}"
+    alt="Photo of a Shiba Inu"
+  />
+
+  <div class="artist-info">
+    <mat-card-title class="card-title"
+      ><span>{{ artist?.name }}</span></mat-card-title
+    >
+
+    <mat-card-subtitle class="card-subtitle">
+      <a
+        class="facebook-page-url"
+        href="{{ artist?.facebook_page_url }}"
+        (click)="$event.stopPropagation()"
+        target="_blank"
+      >
+        {{ "facebook.com/" + artist?.name }}
+      </a>
+    </mat-card-subtitle>
+  </div>
+</mat-card>
